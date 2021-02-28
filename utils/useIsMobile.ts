@@ -1,5 +1,5 @@
-import { useEffect, useState, Dispatch, SetStateAction } from 'react';
 import isMobile from 'ismobilejs';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 export const useIsMobile = (): [boolean, Dispatch<SetStateAction<boolean>>] => {
   const [value, setValue] = useState<boolean>(false);

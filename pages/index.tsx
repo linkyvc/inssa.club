@@ -1,17 +1,17 @@
+import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
-import moment from 'moment';
 import styled from 'styled-components';
 
-import profile from '../data/profile.json';
+import AppButton from '@/components/AppButton';
+import Message, { MessageProps } from '@/components/Message';
+import ServiceWrapper from '@/components/ServiceWrapper';
+import { avatarTouchMessage } from '@/utils/avatarTouchMessage';
+import { copyToClipboard } from '@/utils/copyToClipboard';
+import { openURL } from '@/utils/openURL';
+import { useIsMobile } from '@/utils/useIsMobile';
 
-import AppButton from '../components/AppButton';
-import Message, { MessageProps } from '../components/Message';
-import ServiceWrapper from '../components/ServiceWrapper';
-import { avatarTouchMessage } from '../utils/avatarTouchMessage';
-import { openURL } from '../utils/openURL';
-import { useIsMobile } from '../utils/useIsMobile';
-import { copyToClipboard } from '../utils/copyToClipboard';
+import profile from '../data/profile.json';
 
 interface Social {
   name: string;
