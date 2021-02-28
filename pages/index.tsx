@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
-import AppButton from '@/components/AppButton';
-import Message, { MessageProps } from '@/components/Message';
+import { AppButton } from '@/components/AppButton';
+import { Message, MessageProps } from '@/components/Message';
 import { Profile } from '@/components/Profile';
-import ServiceWrapper from '@/components/ServiceWrapper';
+import { ServiceWrapper } from '@/components/ServiceWrapper';
 import { copyToClipboard } from '@/utils/copyToClipboard';
 import { openURL } from '@/utils/openURL';
 import { useIsMobile } from '@/utils/useIsMobile';

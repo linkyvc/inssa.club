@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ServiceWrapper: React.FC = ({ children }) => {
+export const ServiceWrapper: React.FC = ({ children }) => {
   return (
     <Layout>
       <Wrapper>
@@ -10,8 +10,6 @@ const ServiceWrapper: React.FC = ({ children }) => {
     </Layout>
   );
 };
-
-export default ServiceWrapper;
 
 const Layout = styled.div`
   display: flex;

@@ -18,7 +18,7 @@ type StrictUnionHelper<T, TAll> = T extends any
   : undefined;
 type StrictUnion<T> = StrictUnionHelper<T, T>;
 
-const Message: React.FC<StrictUnion<MessageProps>> = ({
+export const Message: React.FC<StrictUnion<MessageProps>> = ({
   title,
   isMessageShown,
   error,
@@ -45,8 +45,6 @@ const Message: React.FC<StrictUnion<MessageProps>> = ({
     </Wrapper>
   );
 };
-
-export default Message;
 
 const appearAnimation = keyframes`
   0% {

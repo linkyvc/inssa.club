@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 
-import GlobalStyle from '@/components/GlobalStyle';
+import { GlobalStyle } from '@/components/GlobalStyle';
 
 import profile from '../data/profile.json';
 

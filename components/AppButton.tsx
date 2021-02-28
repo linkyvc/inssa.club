@@ -6,7 +6,11 @@ interface AppButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   isMobile: boolean;
 }
 
-const AppButton: React.FC<AppButtonProps> = ({ title, isMobile, ...props }) => {
+export const AppButton: React.FC<AppButtonProps> = ({
+  title,
+  isMobile,
+  ...props
+}) => {
   return (
     <>
       <Button isMobile={isMobile} {...props}>
@@ -15,8 +19,6 @@ const AppButton: React.FC<AppButtonProps> = ({ title, isMobile, ...props }) => {
     </>
   );
 };
-
-export default AppButton;
 
 interface ButtonProps {
   isMobile: boolean;
