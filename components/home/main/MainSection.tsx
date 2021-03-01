@@ -16,11 +16,18 @@ export const MainSection: React.FC = ({ children }) => {
           웹으로 공유하세요 🚀
         </Title>
         <Description>
-          닉네임을 말하면서 스스로를 홍보하는 것보다,
+          닉네임을 외치면서 스스로를 홍보하는 것보다,
           <br />
-          <strong>프로필 링크를 주면 팔로우당할 확률이 높다는 것,</strong>
+          <strong>
+            프로필 링크를 츤츤하게 건네면 팔로우당할 확률이 높다는 것,
+          </strong>
           <br />
           알고 계셨나요!
+        </Description>
+        <Description>
+          사실 여러분의 프로필은 이미 여기 있어요.
+          <br />
+          사용자 이름만 입력하면 바로 볼 수 있죠!
         </Description>
         {children}
       </Content>
@@ -45,6 +52,7 @@ const Content = styled.div`
 
 const Title = styled.h1`
   margin: 0;
+  margin-bottom: 12px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 56px;
@@ -57,8 +65,8 @@ const Title = styled.h1`
 
 const Description = styled.p`
   margin: 0;
-  margin-top: 24px;
+  margin-top: 12px;
   max-width: 474px;
-  font-size: 22px;
+  font-size: 18.5px;
   line-height: 1.4;
 `;
