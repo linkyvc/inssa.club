@@ -68,7 +68,7 @@ const Content = styled.div`
   left: 0;
   display: flex;
   flex-direction: column;
-  max-width: 474px;
+  max-width: 500px;
 
   @media (max-width: 850px) {
     position: unset;
