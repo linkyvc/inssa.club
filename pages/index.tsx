@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { Button } from '@/components/Button';
@@ -7,20 +7,40 @@ import { MainSection } from '@/components/home/main/MainSection';
 import { Input } from '@/components/Input';
 
 const Home = () => {
+  const [username, setUsername] = useState<string>('');
+  const [isEmailInputShown, setEmailInputShown] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isEmailInputShown) {
+      return;
+    }
+    if (!!username) {
+      setEmailInputShown(true);
+    }
+  }, [username]);
+
   return (
     <Container>
       <MainSection>
         <MainForm>
-          <MainInput placeholder="클럽하우스 사용자 이름을 입력하세요" />
-          <MainInput placeholder="이메일을 입력하세요" />
+          <MainInput
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="클럽하우스 사용자 이름을 입력하세요"
+          />
+          {isEmailInputShown && <MainInput placeholder="이메일을 입력하세요" />}
           <MainButton>프로필 생성하기</MainButton>
-          <MainCheckbox>
-            쉿! 🤫
-            <br />
-            저희는 몰래 링키라고 하는 새로운 프로필 서비스를 준비하고 있어요.
-            <br />
-            <strong>링키가 출시되자마자 먼저 초대장을 받고 싶다면 체크!</strong>
-          </MainCheckbox>
+          {isEmailInputShown && (
+            <MainCheckbox>
+              쉿! 🤫
+              <br />
+              저희는 몰래 링키라고 하는 새로운 프로필 서비스를 준비하고 있어요.
+              <br />
+              <strong>
+                링키가 출시되자마자 먼저 초대장을 받고 싶다면 체크!
+              </strong>
+            </MainCheckbox>
+          )}
         </MainForm>
       </MainSection>
     </Container>
