@@ -35,6 +35,8 @@ const Square = styled.div<SquareProps>`
   margin-right: 8px;
   width: 20px;
   height: 20px;
+  border-radius: 4px;
+  border: 1px solid #f4f4f4;
   background-color: #ffffff;
 `;
 

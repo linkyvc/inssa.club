@@ -11,7 +11,7 @@ const Home = () => {
     <Container>
       <MainSection>
         <MainForm>
-          <MainInput placeholder="클럽하우스 닉네임을 입력하세요" />
+          <MainInput placeholder="클럽하우스 사용자 이름을 입력하세요" />
           <MainInput placeholder="이메일을 입력하세요" />
           <MainButton>프로필 생성하기</MainButton>
           <MainCheckbox>
