@@ -43,6 +43,7 @@ const Home = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="이메일을 입력하세요"
+              type="email"
             />
           )}
           <MainButton>프로필 생성하기</MainButton>
