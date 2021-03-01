@@ -8,16 +8,26 @@ import { Input } from '@/components/Input';
 
 const Home = () => {
   const [username, setUsername] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
   const [isEmailInputShown, setEmailInputShown] = useState<boolean>(false);
+  const [isCheckboxShown, setCheckboxShown] = useState<boolean>(false);
 
+  // 초기 로딩 시에만 체크박스 숨기기
   useEffect(() => {
     if (isEmailInputShown) {
       return;
     }
     if (!!username) {
-      setEmailInputShown(true);
+      setCheckboxShown(true);
     }
   }, [username]);
+
+  // 사용자가 체크를 해제하면 입력했던 이메일을 초기화
+  useEffect(() => {
+    if (!isEmailInputShown) {
+      setEmail('');
+    }
+  }, [isEmailInputShown]);
 
   return (
     <Container>
@@ -28,10 +38,19 @@ const Home = () => {
             onChange={(e) => setUsername(e.target.value)}
             placeholder="클럽하우스 사용자 이름을 입력하세요"
           />
-          {isEmailInputShown && <MainInput placeholder="이메일을 입력하세요" />}
-          <MainButton>프로필 생성하기</MainButton>
           {isEmailInputShown && (
-            <MainCheckbox>
+            <MainInput
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="이메일을 입력하세요"
+            />
+          )}
+          <MainButton>프로필 생성하기</MainButton>
+          {isCheckboxShown && (
+            <MainCheckbox
+              value={isEmailInputShown}
+              onChange={setEmailInputShown}
+            >
               쉿! 🤫
               <br />
               저희는 몰래 링키라고 하는 새로운 프로필 서비스를 준비하고 있어요.

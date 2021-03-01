@@ -14,8 +14,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   ...props
 }) => {
   return (
-    <Container {...props}>
-      <Square selected={value} onClick={() => onChange(!value)} />
+    <Container onClick={() => onChange(!value)} {...props}>
+      <Square selected={value} />
       <Text>{children}</Text>
     </Container>
   );
