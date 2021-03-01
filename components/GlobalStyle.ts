@@ -6,9 +6,11 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+    word-break: keep-all;
   }
 
-  button {
+  button,
+  input {
     border: 0;
 
     &:focus {
