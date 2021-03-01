@@ -36,6 +36,7 @@ export const MainSection: React.FC = ({ children }) => {
 };
 
 const Main = styled.div`
+  margin: 120px 0;
   width: 100%;
   position: relative;
   display: flex;

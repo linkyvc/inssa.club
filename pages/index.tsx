@@ -69,13 +69,12 @@ const Home = () => {
 export default Home;
 
 const Container = styled.div`
+  margin: 0 auto;
   width: 100%;
   max-width: 1000px;
   min-height: 100vh;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding-top: 120px;
 `;
 
 const MainForm = styled.div`
