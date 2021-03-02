@@ -5,6 +5,7 @@ import { Button } from '@/components/Button';
 import { Checkbox } from '@/components/Checkbox';
 import { MainSection } from '@/components/home/main/MainSection';
 import { Input } from '@/components/Input';
+import { Strings } from '@/constants/Strings';
 
 const Home = () => {
   const [username, setUsername] = useState<string>('');
@@ -36,29 +37,23 @@ const Home = () => {
           <MainInput
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="클럽하우스 사용자 이름을 입력하세요"
+            placeholder={Strings.main.usernamePlaceholder}
           />
           {isEmailInputShown && (
             <MainInput
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="이메일을 입력하세요"
+              placeholder={Strings.main.emailPlaceholder}
               type="email"
             />
           )}
-          <MainButton>프로필 생성하기</MainButton>
+          <MainButton>{Strings.main.buttonText}</MainButton>
           {isCheckboxShown && (
             <MainCheckbox
               value={isEmailInputShown}
               onChange={setEmailInputShown}
             >
-              쉿! 🤫
-              <br />
-              저희는 몰래 링키라고 하는 새로운 프로필 서비스를 준비하고 있어요.
-              <br />
-              <strong>
-                링키가 출시되자마자 먼저 초대장을 받고 싶다면 체크!
-              </strong>
+              {Strings.main.checkboxText()}
             </MainCheckbox>
           )}
         </MainForm>
