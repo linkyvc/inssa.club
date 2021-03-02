@@ -17,6 +17,7 @@
     "paths": {
       "@/assets/*": ["assets/*"],
       "@/components/*": ["components/*"],
+      "@/constants/*": ["constants/*"],
       "@/pages/*": ["pages/*"],
       "@/types/*": ["types/*"],
       "@/utils/*": ["utils/*"]
