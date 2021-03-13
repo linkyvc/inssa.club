@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import normalize from 'styled-normalize';
 
+import { ClubhouseColors } from '@/constants/Colors';
+
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
 
@@ -19,12 +21,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    background-color: #f2efe4;
+    background-color: ${ClubhouseColors.background_ivory};
   }
 
   body {
     margin: 0;
-    color: #262626;
+    color: ${ClubhouseColors.text_black};
     font-family: 'Nunito', sans-serif;
   }
 

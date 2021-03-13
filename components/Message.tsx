@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 
+import { ClubhouseColors } from '@/constants/Colors';
+
 export type MessageProps = {
   title: string;
   isMessageShown?: boolean;
@@ -62,7 +64,7 @@ interface MessageWrapperProps {
 }
 
 const Wrapper = styled.div<MessageWrapperProps>`
-  background-color: #00a646;
+  background-color: ${ClubhouseColors.background_green};
   position: fixed;
   top: 0;
   left: 0;
@@ -73,7 +75,7 @@ const Wrapper = styled.div<MessageWrapperProps>`
   ${({ error }) =>
     error &&
     css`
-      background-color: #e33f45;
+      background-color: ${ClubhouseColors.background_red};
     `};
 `;
 
@@ -117,11 +119,11 @@ const Button = styled.button<ButtonProps>`
   ${({ primary }) =>
     !primary
       ? css`
-          background-color: #57bf7b;
+          background-color: ${ClubhouseColors.button_green};
           color: white;
         `
       : css`
           background-color: white;
-          color: #00a646;
+          color: ${ClubhouseColors.text_green};
         `};
 `;

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+import { ClubhouseColors } from '@/constants/Colors';
+
 interface AppButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   title: string;
   isMobile: boolean;
@@ -29,16 +31,16 @@ const Button = styled.button<ButtonProps>`
   padding: 8px 20px;
   width: fit-content;
   cursor: pointer;
-  background-color: #e7e3d5;
+  background-color: ${ClubhouseColors.button_ivory};
   border-radius: 9999px;
-  color: #70664b;
+  color: ${ClubhouseColors.text_ivory};
   font-size: 16px;
   font-weight: 700;
 
   ${({ isMobile }) =>
     isMobile &&
     css`
-      background-color: #00a646;
+      background-color: ${ClubhouseColors.background_green};
       color: white;
     `};
 `;
