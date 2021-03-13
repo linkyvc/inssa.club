@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 
+import { ProductColors } from '@/constants/Colors';
+
 export const Input = styled.input`
   font-size: 18.5px;
   font-weight: 500;
   padding: 16px 20px;
-  border: 3px solid #f4f4f4;
+  border: 3px solid ${ProductColors.border_gray};
   border-radius: 8px;
-  background: #ffffff;
+  background: ${ProductColors.white};
 
   &::placeholder {
-    color: #adb5bd;
+    color: ${ProductColors.placeholder};
     font-weight: 400;
   }
 `;

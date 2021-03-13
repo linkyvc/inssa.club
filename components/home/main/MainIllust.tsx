@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import chromeAppIcon from '@/assets/chrome.webp';
 import clubhouseAppIcon from '@/assets/clubhouse.webp';
+import { ProductColors } from '@/constants/Colors';
 
 export const MainIllust: React.FC = () => (
   <IllustWrapper>
@@ -136,7 +137,7 @@ const DummyTextContainer = styled.div`
 
 const DummyTextBase = styled.div`
   height: 42px;
-  background: #ffffff;
+  background: ${ProductColors.white};
   box-shadow: -8px 8px 36px rgba(0, 0, 0, 0.14);
   border-radius: 32px;
 
