@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Button } from '@/components/Button';
 import { Checkbox } from '@/components/Checkbox';
+import { Footer } from '@/components/home/main/Footer';
 import { MainSection } from '@/components/home/main/MainSection';
 import { Input } from '@/components/Input';
 import { Strings } from '@/constants/Strings';
@@ -57,6 +58,7 @@ const Home = () => {
             </MainCheckbox>
           )}
         </MainForm>
+        <Footer />
       </MainSection>
     </Container>
   );
