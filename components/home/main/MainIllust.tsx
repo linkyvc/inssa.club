@@ -190,12 +190,12 @@ const DummyTextTwo = styled(DummyTextBase)`
   /* 80% */
   @media (max-width: 600px) {
     margin-top: 9px;
-    width: 142px;
+    width: 112px;
   }
 
   /* 60% */
   @media (max-width: 400px) {
     margin-top: 7px;
-    width: 108px;
+    width: 92px;
   }
 `;
