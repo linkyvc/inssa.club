@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Footer = () => {
   return (
     <Container>
-      <Link>The Linkkky team</Link>
+      <Link>Linky</Link>
       <Divider />
       <Link>Waitlist</Link>
     </Container>
