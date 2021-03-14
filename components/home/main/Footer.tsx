@@ -15,6 +15,10 @@ const Container = styled.footer`
   margin-top: 64px;
   display: flex;
   align-items: center;
+
+  @media (max-width: 850px) {
+    margin-top: 32px;
+  }
 `;
 
 const Link = styled.a`
