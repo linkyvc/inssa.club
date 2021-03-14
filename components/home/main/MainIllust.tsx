@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import chromeAppIcon from '@/assets/chrome.webp';
 import clubhouseAppIcon from '@/assets/clubhouse.webp';
+import linkyIcon from '@/assets/linky.png';
 import { ProductColors } from '@/constants/Colors';
 
 export const MainIllust: React.FC = () => (
   <IllustWrapper>
     <IllustContainer>
-      <ChromeAppIcon src={chromeAppIcon} />
       <ClubhouseAppIcon src={clubhouseAppIcon} />
       <DummyTextContainer>
         <DummyTextOne />
         <DummyTextTwo />
       </DummyTextContainer>
+      <LinkyIcon src={linkyIcon} />
     </IllustContainer>
   </IllustWrapper>
 );
@@ -23,7 +23,7 @@ const IllustWrapper = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-  height: 430px;
+  height: 415px;
 
   /* 85% */
   @media (max-width: 950px) {
@@ -77,12 +77,13 @@ const AppIcon = styled.img`
   }
 `;
 
-const ChromeAppIcon = styled(AppIcon)`
+const LinkyIcon = styled(AppIcon)`
   background-color: white;
-  box-shadow: 16px 32px 67px -15px rgba(255, 0, 0, 0.14);
+  box-shadow: 12px 4px 36px rgba(255, 169, 39, 0.24);
   position: absolute;
-  top: 184px;
+  top: 151px;
   right: 155px;
+  border-radius: 50% !important;
 
   /* 85% */
   @media (max-width: 950px) {
@@ -116,7 +117,7 @@ const DummyTextContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
   position: absolute;
-  top: 305px;
+  top: 333px;
   right: 0;
 
   /* 85% */
