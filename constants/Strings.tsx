@@ -1,6 +1,16 @@
 import LocalizedStrings from 'react-localization';
 
 export const Strings = {
+  project: new LocalizedStrings({
+    en: {
+      title: 'Inssa Club',
+      description: 'Create your full clubhouse profile',
+    },
+    ko: {
+      title: '인싸클럽',
+      description: '링크 하나로, 클럽하우스 프로필을 그대로.',
+    },
+  }),
   main: new LocalizedStrings({
     en: {
       title: () => (
