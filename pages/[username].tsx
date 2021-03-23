@@ -75,7 +75,7 @@ const UserProfile = ({ data }: Props) => {
           content={`https://inssa.club/${data.profile.username}`}
         />
         <meta property="og:description" content={data.profile.bio} />
-        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:image" content={data.profile.photo_url} />
       </Head>
       <ServiceWrapper>
         <Wrapper>
