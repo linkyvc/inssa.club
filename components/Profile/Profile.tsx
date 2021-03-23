@@ -49,16 +49,18 @@ export const Profile: React.FC<ProfileProps> = ({ profile }) => {
           </SocialLink>
         )}
       </SocialRow>
-      <NorminationContainer>
-        <NorminationProfile src={profile.invited_by_user_profile.photo_url} />
-        <NorminationInformation>
-          <JoinedAt>{`Joined ${formattedJoinedDate}`}</JoinedAt>
-          <NorminationText>
-            Norminated by{' '}
-            <Norminator>{profile.invited_by_user_profile.name}</Norminator>
-          </NorminationText>
-        </NorminationInformation>
-      </NorminationContainer>
+      <NorminationLink href={`/${profile.invited_by_user_profile.username}`}>
+        <NorminationContainer>
+          <NorminationProfile src={profile.invited_by_user_profile.photo_url} />
+          <NorminationInformation>
+            <JoinedAt>{`Joined ${formattedJoinedDate}`}</JoinedAt>
+            <NorminationText>
+              Norminated by{' '}
+              <Norminator>{profile.invited_by_user_profile.name}</Norminator>
+            </NorminationText>
+          </NorminationInformation>
+        </NorminationContainer>
+      </NorminationLink>
     </>
   );
 };
@@ -143,6 +145,11 @@ const InstagramLogo = styled(SocialLogo).attrs({
 const TwitterLogo = styled(SocialLogo).attrs({
   src: 'images/twitter.svg',
 })``;
+
+const NorminationLink = styled.a`
+  cursor: pointer;
+  color: unset;
+`;
 
 const NorminationContainer = styled.div`
   margin-top: 45px;
