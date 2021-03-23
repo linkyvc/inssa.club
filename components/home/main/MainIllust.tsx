@@ -31,22 +31,25 @@ const IllustWrapper = styled.div`
   }
 
   @media (max-width: 850px) {
-    position: unset;
+    height: auto;
+    position: static;
+    margin-top: 48px;
+    margin-bottom: 16px;
   }
 
-  /* 80% */
-  @media (max-width: 600px) {
-    height: 344px;
-  }
-
-  /* 60% */
-  @media (max-width: 400px) {
-    height: 258px;
+  @media (max-width: 500px) {
+    margin-bottom: 0;
   }
 `;
 
 const IllustContainer = styled.div`
   position: relative;
+
+  @media (max-width: 850px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+  }
 `;
 
 const AppIcon = styled.img`
@@ -69,11 +72,15 @@ const AppIcon = styled.img`
   }
 
   /* 60% */
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     width: 148px;
     height: 148px;
     border-radius: 52px;
     border-radius: 38px;
+  }
+
+  @media (max-width: 385px) {
+    zoom: 0.7;
   }
 `;
 
@@ -91,16 +98,14 @@ const LinkyIcon = styled(AppIcon)`
     right: 132px;
   }
 
-  /* 80% */
-  @media (max-width: 600px) {
-    top: 147px;
-    right: 124px;
+  @media (max-width: 850px) {
+    position: static;
+    margin-right: 16px;
   }
 
-  /* 60% */
-  @media (max-width: 400px) {
-    top: 110px;
-    right: 93px;
+  @media (max-width: 360px) {
+    position: static;
+    margin-right: 12px;
   }
 `;
 
@@ -110,6 +115,10 @@ const ClubhouseAppIcon = styled(AppIcon)`
   position: absolute;
   top: 0;
   right: 0;
+
+  @media (max-width: 850px) {
+    position: static;
+  }
 `;
 
 const DummyTextContainer = styled.div`
@@ -125,14 +134,8 @@ const DummyTextContainer = styled.div`
     top: 260px;
   }
 
-  /* 80% */
-  @media (max-width: 600px) {
-    top: 244px;
-  }
-
-  /* 60% */
-  @media (max-width: 400px) {
-    top: 184px;
+  @media (max-width: 850px) {
+    display: none;
   }
 `;
 
@@ -146,16 +149,6 @@ const DummyTextBase = styled.div`
   @media (max-width: 950px) {
     height: 36px;
   }
-
-  /* 80% */
-  @media (max-width: 600px) {
-    height: 34px;
-  }
-
-  /* 60% */
-  @media (max-width: 400px) {
-    height: 24px;
-  }
 `;
 
 const DummyTextOne = styled(DummyTextBase)`
@@ -164,16 +157,6 @@ const DummyTextOne = styled(DummyTextBase)`
   /* 85% */
   @media (max-width: 950px) {
     width: 236px;
-  }
-
-  /* 80% */
-  @media (max-width: 600px) {
-    width: 220px;
-  }
-
-  /* 60% */
-  @media (max-width: 400px) {
-    width: 166px;
   }
 `;
 
@@ -185,17 +168,5 @@ const DummyTextTwo = styled(DummyTextBase)`
   @media (max-width: 950px) {
     margin-top: 10px;
     width: 152px;
-  }
-
-  /* 80% */
-  @media (max-width: 600px) {
-    margin-top: 9px;
-    width: 112px;
-  }
-
-  /* 60% */
-  @media (max-width: 400px) {
-    margin-top: 7px;
-    width: 92px;
   }
 `;

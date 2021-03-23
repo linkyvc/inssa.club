@@ -39,7 +39,6 @@ const Container = styled.main`
 
   @media (max-width: 850px) {
     margin: 0px auto;
-    flex-direction: column-reverse;
   }
 `;
 
