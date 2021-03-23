@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -9,6 +9,7 @@ import { Checkbox } from '@/components/Checkbox';
 import { Footer } from '@/components/home/main/Footer';
 import { MainSection } from '@/components/home/main/MainSection';
 import { Input } from '@/components/Input';
+import { Message, MessageProps } from '@/components/Message';
 import { Strings } from '@/constants/Strings';
 import { ProfileDocument } from '@/types/clubhouse';
 
@@ -18,6 +19,11 @@ const Home = () => {
   const [email, setEmail] = useState<string>('');
   const [isEmailInputShown, setEmailInputShown] = useState<boolean>(false);
   const [isCheckboxShown, setCheckboxShown] = useState<boolean>(false);
+
+  const [isMessageShown, setMessageShown] = useState<boolean>(false);
+  const [message, setMessage] = useState<MessageProps>({
+    title: '',
+  });
 
   // 초기 로딩 시에만 체크박스 숨기기
   useEffect(() => {
@@ -43,8 +49,14 @@ const Home = () => {
         `https://clubhouse.api.inssa.club/profile/${username}`,
       );
       clubhouse_user_id = data.user_id;
-    } catch {
-      alert('No user');
+    } catch (err) {
+      console.log(err.response.status);
+      setMessage({
+        title: '😭 해당 이름의 사용자를 찾을 수 없습니다!',
+        error: true,
+      });
+      setMessageShown(true);
+      setTimeout(() => setMessageShown(false), 3000);
       return;
     }
 
@@ -54,9 +66,37 @@ const Home = () => {
           clubhouse_user_id,
           email,
         });
-        alert('Subscription Complete');
-      } catch {
-        alert('Error');
+        setMessage({
+          title:
+            '✅ 고마워요! 서비스가 완성되면 초대장과 함께 꼭 알려드릴게요.',
+        });
+        setMessageShown(true);
+        setTimeout(() => {
+          setMessageShown(false);
+          router.push(`/${username}`);
+        }, 1500);
+        return;
+      } catch (err) {
+        const axiosErr: AxiosError<{ error_type: string }> = err;
+        console.log(axiosErr.response);
+        if (axiosErr.response.data?.error_type === 'DuplicateEmailError') {
+          setMessage({
+            title: '✅ 이미 등록되어 있어요! 안심해도 좋아요.',
+          });
+          setMessageShown(true);
+          setTimeout(() => {
+            setMessageShown(false);
+            router.push(`/${username}`);
+          }, 1500);
+          return;
+        }
+        setMessage({
+          title: '🤕 서버에 문제가 발생했습니다. 잠시 뒤 시도해 주세요.',
+          error: true,
+        });
+        setMessageShown(true);
+        setTimeout(() => setMessageShown(false), 3000);
+        return;
       }
     }
     router.push(`/${username}`);
@@ -102,6 +142,7 @@ const Home = () => {
           </MainForm>
           <Footer />
         </MainSection>
+        <Message isMessageShown={isMessageShown} {...message} />
       </Container>
     </>
   );

@@ -2,19 +2,15 @@ import axios from 'axios';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
 import { AppButton } from '@/components/AppButton';
-import { Message, MessageProps } from '@/components/Message';
 import { Profile } from '@/components/Profile';
 import { ServiceWrapper } from '@/components/ServiceWrapper';
 import { ProfileDocument } from '@/types/clubhouse';
-import { copyToClipboard } from '@/utils/copyToClipboard';
 import { useIsMobile } from '@/utils/useIsMobile';
-
-import profile from '../data/profile.json';
 
 type Props = {
   data: ProfileDocument;
@@ -26,10 +22,6 @@ type Params = ParsedUrlQuery & {
 
 const UserProfile = ({ data }: Props) => {
   const [isMobile] = useIsMobile();
-  const [isMessageShown, setMessageShown] = useState<boolean>(false);
-  const [message, setMessage] = useState<MessageProps>({
-    title: '',
-  });
 
   useEffect(() => {
     ReactGA.initialize('G-3JHG3XBMTX');
@@ -64,7 +56,6 @@ const UserProfile = ({ data }: Props) => {
             onClick={onClickAppButton}
           />
         </Wrapper>
-        <Message isMessageShown={isMessageShown} {...message} />
       </ServiceWrapper>
     </>
   );
