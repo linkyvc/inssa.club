@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { GetServerSideProps } from 'next';
+import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
 import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
@@ -62,17 +63,32 @@ const UserProfile = ({ data }: Props) => {
   };
 
   return (
-    <ServiceWrapper>
-      <Wrapper>
-        <Profile profile={data.profile} />
-        <OpenAppButton
-          isMobile={isMobile}
-          title="Open app to follow me"
-          onClick={onClickAppButton}
+    <>
+      <Head>
+        <title>{data.profile.name}'s Clubhouse</title>
+        <meta
+          property="og:title"
+          content={`${data.profile.name}'s Clubhouse`}
         />
-      </Wrapper>
-      <Message isMessageShown={isMessageShown} {...message} />
-    </ServiceWrapper>
+        <meta
+          property="og:url"
+          content={`https://inssa.club/${data.profile.username}`}
+        />
+        <meta property="og:description" content={data.profile.bio} />
+        <meta property="og:image" content="/og-image.png" />
+      </Head>
+      <ServiceWrapper>
+        <Wrapper>
+          <Profile profile={data.profile} />
+          <OpenAppButton
+            isMobile={isMobile}
+            title="Open app to follow me"
+            onClick={onClickAppButton}
+          />
+        </Wrapper>
+        <Message isMessageShown={isMessageShown} {...message} />
+      </ServiceWrapper>
+    </>
   );
 };
 
