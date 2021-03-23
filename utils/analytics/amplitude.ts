@@ -17,19 +17,13 @@ export async function initialize() {
 
 export async function logEvent<TName extends keyof AnalyticsEvent>(
   name: TName,
-  ...[propertiesWithoutReferrer]: undefined extends AnalyticsEvent[TName]
-    ? []
-    : [AnalyticsEvent[TName]]
+  properties: AnalyticsEvent[TName],
 ) {
-  const properties = {
+  const eventProperties = {
     referrer: document.referrer || undefined,
-    ...propertiesWithoutReferrer,
+    ...properties,
   };
-  if (properties !== undefined) {
-    console.log('[Analytics]', name, properties);
-  } else {
-    console.log('[Analytics]', name);
-  }
+  console.log('[Analytics]', name, eventProperties);
   const amplitude = await getAmplitude();
-  amplitude?.logEvent(name, properties);
+  amplitude?.logEvent(name, eventProperties);
 }

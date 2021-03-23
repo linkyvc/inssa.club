@@ -3,6 +3,9 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 
 import { GlobalStyle } from '@/components/GlobalStyle';
+import { Analytics } from '@/utils/analytics';
+
+Analytics.initialize();
 
 function App({ Component, pageProps }) {
   useEffect(() => {

@@ -2,13 +2,14 @@ import axios from 'axios';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import { AppButton } from '@/components/AppButton';
 import { Profile } from '@/components/Profile';
 import { ServiceWrapper } from '@/components/ServiceWrapper';
 import { ProfileDocument } from '@/types/clubhouse';
+import { Analytics } from '@/utils/analytics';
 import { useIsMobile } from '@/utils/useIsMobile';
 
 type Props = {
@@ -21,6 +22,13 @@ type Params = ParsedUrlQuery & {
 
 const UserProfile = ({ data }: Props) => {
   const [isMobile] = useIsMobile();
+
+  useEffect(() => {
+    Analytics.logEvent('view_profile', {
+      clubhouse_user_id: data.user_id,
+      clubhouse_username: data.username,
+    });
+  }, []);
 
   const onClickAppButton = () => {
     window.location.href = 'https://ios.joinclubhouse.com/@junhoyeo';
