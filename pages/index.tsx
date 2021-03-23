@@ -133,7 +133,6 @@ const Home = () => {
         <meta property="og:title" content={Strings.project.title} />
         <meta property="og:description" content={Strings.project.description} />
         <meta property="og:url" content="https://inssa.club/" />
-        <meta property="og:image" content="/og-image.png" />
       </Head>
       <Container>
         <MainSection>
