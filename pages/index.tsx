@@ -1,3 +1,5 @@
+import axios from 'axios';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
@@ -7,8 +9,10 @@ import { Footer } from '@/components/home/main/Footer';
 import { MainSection } from '@/components/home/main/MainSection';
 import { Input } from '@/components/Input';
 import { Strings } from '@/constants/Strings';
+import { ProfileDocument } from '@/types/clubhouse';
 
 const Home = () => {
+  const router = useRouter();
   const [username, setUsername] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [isEmailInputShown, setEmailInputShown] = useState<boolean>(false);
@@ -31,6 +35,32 @@ const Home = () => {
     }
   }, [isEmailInputShown]);
 
+  const onClickEnter = async () => {
+    let clubhouse_user_id = undefined;
+    try {
+      const { data } = await axios.get<ProfileDocument>(
+        `https://clubhouse.api.inssa.club/profile/${username}`,
+      );
+      clubhouse_user_id = data.user_id;
+    } catch {
+      alert('No user');
+      return;
+    }
+
+    if (email && clubhouse_user_id !== undefined) {
+      try {
+        await axios.post('https://waitlist.api.inssa.club/interest', {
+          clubhouse_user_id,
+          email,
+        });
+        alert('Subscription Complete');
+      } catch {
+        alert('Error');
+      }
+    }
+    router.push(`/${username}`);
+  };
+
   return (
     <Container>
       <MainSection>
@@ -48,7 +78,9 @@ const Home = () => {
               type="email"
             />
           )}
-          <MainButton>{Strings.main.buttonText}</MainButton>
+          <MainButton onClick={onClickEnter}>
+            {Strings.main.buttonText}
+          </MainButton>
           {isCheckboxShown && (
             <MainCheckbox
               value={isEmailInputShown}
