@@ -110,7 +110,7 @@ const Home = () => {
 export default Home;
 
 const Container = styled.div`
-  margin: 0 auto;
+  margin: 64px auto 0;
   width: 100%;
   max-width: 1000px;
   min-height: 100vh;

@@ -13,6 +13,9 @@ export const Footer = () => {
 
 const Container = styled.footer`
   margin-top: 64px;
+  margin-bottom: 16px;
+  margin-bottom: calc(constant(safe-area-inset-bottom) + 16px);
+  margin-bottom: calc(env(safe-area-inset-bottom) + 16px);
   display: flex;
   align-items: center;
 

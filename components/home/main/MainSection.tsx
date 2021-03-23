@@ -26,19 +26,18 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.main`
-  margin: 120px 0;
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
 
   @media (max-width: 1100px) {
-    margin: 120px auto;
+    margin: 0 auto;
     width: calc(100% - 60px);
   }
 
   @media (max-width: 850px) {
-    margin: 0px auto;
+    margin: 0 auto;
   }
 `;
 
@@ -53,7 +52,6 @@ const Content = styled.div`
   @media (max-width: 850px) {
     position: unset;
     margin-top: 36px;
-    margin-bottom: 24px;
   }
 `;
 
