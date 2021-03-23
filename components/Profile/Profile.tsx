@@ -20,11 +20,11 @@ export const Profile: React.FC<ProfileProps> = ({ profile }) => {
       <Username>{`@${profile.username}`}</Username>
       <FollowRow>
         <Followers>
-          {profile.num_followers}
+          {profile.num_followers.toLocaleString()}
           <FollowPrefix>followers</FollowPrefix>
         </Followers>
         <Following>
-          {profile.num_following}
+          {profile.num_following.toLocaleString()}
           <FollowPrefix>following</FollowPrefix>
         </Following>
       </FollowRow>
