@@ -129,7 +129,7 @@ const Home = () => {
     <>
       <Head>
         {/* 서버 렌더링 시(링크 공유 시점)에는 언어와 관계없이 영어로 표시 */}
-        <title>{`${Strings.project.title}: ${Strings.project.description}`}</title>
+        <title>{Strings.project.title}</title>
         <meta property="og:title" content={Strings.project.title} />
         <meta property="og:description" content={Strings.project.description} />
         <meta property="og:url" content="https://inssa.club/" />

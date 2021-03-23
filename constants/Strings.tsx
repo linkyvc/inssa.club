@@ -3,12 +3,13 @@ import LocalizedStrings from 'react-localization';
 export const Strings = {
   project: new LocalizedStrings({
     en: {
-      title: 'Inssa Club',
-      description: 'Create your full clubhouse profile',
+      title:
+        'Inssa Club - Share your full Clubhouse Profile with a single link',
+      description: 'Clubhouse profile with a single link.',
     },
     ko: {
-      title: '인싸클럽',
-      description: '링크 하나로, 클럽하우스 프로필을 그대로.',
+      title: '인싸클럽 - 클럽하우스 프로필 링크',
+      description: '클럽하우스 프로필 그대로, 링크 하나로.',
     },
   }),
   main: new LocalizedStrings({
@@ -36,7 +37,12 @@ export const Strings = {
       ),
       alreadyHere: () => (
         <>
-          <strong>Well, your profile is already here!</strong>
+          <strong>
+            Well, your profile is already here!
+            <br />
+            Same look as in the original app, it's better than the offical web
+            profile.
+          </strong>
           <br />
           You can get access to it when you submit your username below.
         </>
@@ -82,6 +88,12 @@ export const Strings = {
       ),
       alreadyHere: () => (
         <>
+          <strong>
+            클럽하우스 앱에 있는 디자인을 그대로 옮겨서,
+            <br />
+            공식 웹 프로필보다 더 멋진 인상을 주지요.
+          </strong>
+          <br />
           사실 여러분의 프로필은 이미 여기 있어요.
           <br />
           사용자 이름만 입력하면 바로 볼 수 있죠!
