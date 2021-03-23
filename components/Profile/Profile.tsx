@@ -70,6 +70,7 @@ const Avatar = styled.img`
   height: 80px;
   border-radius: 36px;
   cursor: pointer;
+  background-color: ${ClubhouseColors.placeholder_ivory};
 `;
 
 const Name = styled.h1`

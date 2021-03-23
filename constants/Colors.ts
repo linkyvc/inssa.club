@@ -19,6 +19,7 @@ export const ClubhouseColors = {
   background_red: '#e33f45',
 
   background_ivory: '#f2efe4',
+  placeholder_ivory: '#e7e3d5',
   button_ivory: '#e7e3d5',
   text_ivory: '#70664b',
 
