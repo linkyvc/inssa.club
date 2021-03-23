@@ -1,4 +1,5 @@
 export type AnalyticsEvent = {
+  view_landing: undefined;
   view_profile: {
     clubhouse_user_id: number;
     clubhouse_username: string;

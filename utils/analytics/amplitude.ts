@@ -17,7 +17,7 @@ export async function initialize() {
 
 export async function logEvent<TName extends keyof AnalyticsEvent>(
   name: TName,
-  properties: AnalyticsEvent[TName],
+  properties: AnalyticsEvent[TName] = undefined,
 ) {
   const eventProperties = {
     referrer: document.referrer || undefined,

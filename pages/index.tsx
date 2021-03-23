@@ -12,6 +12,7 @@ import { Input } from '@/components/Input';
 import { Message, MessageProps } from '@/components/Message';
 import { Strings } from '@/constants/Strings';
 import { ProfileDocument } from '@/types/clubhouse';
+import { Analytics } from '@/utils/analytics';
 
 const Home = () => {
   const router = useRouter();
@@ -24,6 +25,12 @@ const Home = () => {
   const [message, setMessage] = useState<MessageProps>({
     title: '',
   });
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      Analytics.logEvent('view_landing');
+    }
+  }, []);
 
   // 초기 로딩 시에만 체크박스 숨기기
   useEffect(() => {
