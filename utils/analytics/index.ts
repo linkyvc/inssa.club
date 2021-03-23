@@ -1,6 +1,6 @@
 import { getAmplitude, initialize, logEvent } from './amplitude';
 
-export default {
+export const Analytics = {
   getAmplitude,
   initialize,
   logEvent,
