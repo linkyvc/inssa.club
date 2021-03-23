@@ -37,29 +37,7 @@ const UserProfile = ({ data }: Props) => {
   }, []);
 
   const onClickAppButton = () => {
-    setMessageShown(false);
-    if (!isMobile) {
-      setTimeout(() => {
-        setMessage({
-          title: '🥲 This only works in iOS devices for now!',
-          error: true,
-        });
-        setMessageShown(true);
-        setTimeout(() => setMessageShown(false), 2500);
-      }, 100);
-      return;
-    }
-
-    copyToClipboard(profile.username);
-    setTimeout(() => {
-      setMessage({
-        title: '✅ Copied my username to your clipboard!',
-      });
-      setMessageShown(true);
-    }, 100);
-    setTimeout(() => {
-      window.location.href = 'clubhouse://';
-    }, 500);
+    window.location.href = 'https://ios.joinclubhouse.com/@junhoyeo';
   };
 
   return (
