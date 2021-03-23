@@ -107,7 +107,7 @@ const Bio = styled.p`
   margin-top: 34px;
   white-space: pre-line;
   font-size: 1.02rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.45;
 `;
 
