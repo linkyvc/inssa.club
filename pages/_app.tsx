@@ -19,7 +19,14 @@ function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Inssa Club" />
         <meta property="og:image" content="/og-image.png" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="Inssa Club" />
+        <meta name="twitter:image" content="/og-image.png" />
+
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&family=Montserrat:wght@900&display=swap"

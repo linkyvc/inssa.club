@@ -54,6 +54,17 @@ const UserProfile = ({ data }: Props) => {
         />
         <meta property="og:description" content={data.profile.bio} />
         <meta property="og:image" content={data.profile.photo_url} />
+
+        <meta
+          name="twitter:title"
+          content={`${data.profile.name}'s Clubhouse`}
+        />
+        <meta name="twitter:description" content={data.profile.bio} />
+        <meta property="twitter:image" content={data.profile.photo_url} />
+        <meta
+          property="twitter:url"
+          content={`https://inssa.club/${data.profile.username}`}
+        />
       </Head>
       <ServiceWrapper>
         <Wrapper>
