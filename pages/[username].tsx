@@ -30,7 +30,11 @@ const UserProfile = ({ data }: Props) => {
     });
   }, []);
 
-  const onClickAppButton = () => {
+  const onClickAppButton = async () => {
+    await Analytics.logEvent('click_profile_open_app', {
+      clubhouse_user_id: data.user_id,
+      clubhouse_username: data.username,
+    });
     window.location.href = 'https://ios.joinclubhouse.com/@junhoyeo';
   };
 
