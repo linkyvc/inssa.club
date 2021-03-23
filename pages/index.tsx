@@ -51,11 +51,14 @@ const Home = () => {
 
   const onClickEnter = async () => {
     let clubhouse_user_id = undefined;
+    let clubhouse_username = undefined;
+
     try {
       const { data } = await axios.get<ProfileDocument>(
         `https://clubhouse.api.inssa.club/profile/${username}`,
       );
       clubhouse_user_id = data.user_id;
+      clubhouse_username = data.username;
     } catch (err) {
       console.log(err.response.status);
       setMessage({
@@ -73,16 +76,6 @@ const Home = () => {
           clubhouse_user_id,
           email,
         });
-        setMessage({
-          title:
-            '✅ 고마워요! 서비스가 완성되면 초대장과 함께 꼭 알려드릴게요.',
-        });
-        setMessageShown(true);
-        setTimeout(() => {
-          setMessageShown(false);
-          router.push(`/${username}`);
-        }, 1500);
-        return;
       } catch (err) {
         const axiosErr: AxiosError<{ error_type: string }> = err;
         console.log(axiosErr.response);
@@ -105,7 +98,25 @@ const Home = () => {
         setTimeout(() => setMessageShown(false), 3000);
         return;
       }
+
+      Analytics.logEvent('click_create_profile', {
+        clubhouse_user_id,
+        clubhouse_username,
+        email,
+      });
+
+      setMessage({
+        title: '✅ 고마워요! 서비스가 완성되면 초대장과 함께 꼭 알려드릴게요.',
+      });
+      setMessageShown(true);
+      setTimeout(() => {
+        setMessageShown(false);
+        router.push(`/${username}`);
+      }, 1500);
+      return;
     }
+
+    // 이메일을 입력하지 않았을 경우
     router.push(`/${username}`);
   };
 
