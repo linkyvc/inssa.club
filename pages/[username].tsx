@@ -35,7 +35,7 @@ const UserProfile = ({ data }: Props) => {
       clubhouse_user_id: data.user_id,
       clubhouse_username: data.username,
     });
-    window.location.href = 'https://ios.joinclubhouse.com/@junhoyeo';
+    window.location.href = `https://ios.joinclubhouse.com/@${data.username}`;
   };
 
   return (
