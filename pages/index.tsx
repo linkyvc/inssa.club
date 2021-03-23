@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
@@ -62,37 +63,47 @@ const Home = () => {
   };
 
   return (
-    <Container>
-      <MainSection>
-        <MainForm>
-          <MainInput
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder={Strings.main.usernamePlaceholder}
-          />
-          {isEmailInputShown && (
+    <>
+      <Head>
+        {/* 서버 렌더링 시(링크 공유 시점)에는 언어와 관계없이 영어로 표시 */}
+        <title>{`${Strings.project.title}: ${Strings.project.description}`}</title>
+        <meta property="og:title" content={Strings.project.title} />
+        <meta property="og:description" content={Strings.project.description} />
+        <meta property="og:url" content="https://inssa.club/" />
+        <meta property="og:image" content="/og-image.png" />
+      </Head>
+      <Container>
+        <MainSection>
+          <MainForm>
             <MainInput
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={Strings.main.emailPlaceholder}
-              type="email"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder={Strings.main.usernamePlaceholder}
             />
-          )}
-          <MainButton onClick={onClickEnter}>
-            {Strings.main.buttonText}
-          </MainButton>
-          {isCheckboxShown && (
-            <MainCheckbox
-              value={isEmailInputShown}
-              onChange={setEmailInputShown}
-            >
-              {Strings.main.checkboxText()}
-            </MainCheckbox>
-          )}
-        </MainForm>
-        <Footer />
-      </MainSection>
-    </Container>
+            {isEmailInputShown && (
+              <MainInput
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={Strings.main.emailPlaceholder}
+                type="email"
+              />
+            )}
+            <MainButton onClick={onClickEnter}>
+              {Strings.main.buttonText}
+            </MainButton>
+            {isCheckboxShown && (
+              <MainCheckbox
+                value={isEmailInputShown}
+                onChange={setEmailInputShown}
+              >
+                {Strings.main.checkboxText()}
+              </MainCheckbox>
+            )}
+          </MainForm>
+          <Footer />
+        </MainSection>
+      </Container>
+    </>
   );
 };
 
