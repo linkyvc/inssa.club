@@ -23,7 +23,9 @@ export async function logEvent<TName extends keyof AnalyticsEvent>(
     referrer: document.referrer || undefined,
     ...properties,
   };
-  console.log('[Analytics]', name, eventProperties);
+  if (process.env.NODE_ENV !== 'production') {
+    console.log('[Analytics]', name, eventProperties);
+  }
   const amplitude = await getAmplitude();
   amplitude?.logEvent(name, eventProperties);
 }
