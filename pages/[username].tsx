@@ -24,10 +24,12 @@ const UserProfile = ({ data }: Props) => {
   const [isMobile] = useIsMobile();
 
   useEffect(() => {
-    Analytics.logEvent('view_profile', {
-      clubhouse_user_id: data.user_id,
-      clubhouse_username: data.username,
-    });
+    if (typeof window !== 'undefined') {
+      Analytics.logEvent('view_profile', {
+        clubhouse_user_id: data.user_id,
+        clubhouse_username: data.username,
+      });
+    }
   }, []);
 
   const onClickAppButton = async () => {

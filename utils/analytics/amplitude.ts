@@ -3,7 +3,7 @@ import { AnalyticsEvent } from './events';
 const AMPLITUDE_API_KEY = '51c303b8d2b9818ff183aa831672ce93';
 
 export async function getAmplitude() {
-  if (window !== undefined) {
+  if (typeof window !== 'undefined') {
     const amplitude = await import('amplitude-js');
     return amplitude.getInstance();
   }
