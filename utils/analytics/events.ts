@@ -11,7 +11,7 @@ export type AnalyticsEvent = {
   click_profile_norminated: {
     clubhouse_user_id: number;
     clubhouse_username: string;
-    norminated_clubhouse_user_id: string;
+    norminated_clubhouse_user_id: number;
     norminated_clubhouse_username: string;
   };
   click_profile_social: {

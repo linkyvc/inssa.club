@@ -51,7 +51,7 @@ const UserProfile = ({ data }: Props) => {
       </Head>
       <ServiceWrapper>
         <Wrapper>
-          <Profile profile={data.profile} />
+          <Profile data={data} />
           <OpenAppButton
             isMobile={isMobile}
             title="Open app to follow me"

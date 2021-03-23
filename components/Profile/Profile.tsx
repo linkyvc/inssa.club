@@ -1,15 +1,21 @@
 import moment from 'moment';
+import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
 
 import { ClubhouseColors } from '@/constants/Colors';
-import { Clubhouse } from '@/types/clubhouse';
+import { ProfileDocument } from '@/types/clubhouse';
+import { Analytics } from '@/utils/analytics';
 
 interface ProfileProps {
-  profile: Clubhouse.Profile;
+  data: ProfileDocument;
 }
 
-export const Profile: React.FC<ProfileProps> = ({ profile }) => {
+export const Profile: React.FC<ProfileProps> = ({
+  data: { user_id, profile },
+}) => {
+  const router = useRouter();
+
   const formattedJoinedDate = moment(new Date(profile.time_created)) //
     .format('MMM DD, yyyy');
 
@@ -34,6 +40,13 @@ export const Profile: React.FC<ProfileProps> = ({ profile }) => {
           <SocialLink
             href={`https://instagram.com/${profile.instagram}`}
             target="_blank"
+            onClick={() =>
+              Analytics.logEvent('click_profile_social', {
+                clubhouse_user_id: user_id,
+                clubhouse_username: profile.username,
+                type: 'instagram',
+              })
+            }
           >
             <InstagramLogo />
             <span>{profile.instagram}</span>
@@ -43,13 +56,34 @@ export const Profile: React.FC<ProfileProps> = ({ profile }) => {
           <SocialLink
             href={`https://twitter.com/${profile.twitter}`}
             target="_blank"
+            onClick={() =>
+              Analytics.logEvent('click_profile_social', {
+                clubhouse_user_id: user_id,
+                clubhouse_username: profile.username,
+                type: 'twitter',
+              })
+            }
           >
             <TwitterLogo />
             <span>{profile.twitter}</span>
           </SocialLink>
         )}
       </SocialRow>
-      <NorminationLink href={`/${profile.invited_by_user_profile.username}`}>
+      <NorminationLink
+        href={`/${profile.invited_by_user_profile.username}`}
+        onClick={async (event) => {
+          event.preventDefault();
+          await Analytics.logEvent('click_profile_norminated', {
+            clubhouse_user_id: user_id,
+            clubhouse_username: profile.username,
+            norminated_clubhouse_user_id:
+              profile.invited_by_user_profile.user_id,
+            norminated_clubhouse_username:
+              profile.invited_by_user_profile.username,
+          });
+          router.push(`/${profile.invited_by_user_profile.username}`);
+        }}
+      >
         <NorminationContainer>
           <NorminationProfile src={profile.invited_by_user_profile.photo_url} />
           <NorminationInformation>
