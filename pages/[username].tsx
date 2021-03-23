@@ -40,18 +40,6 @@ const UserProfile = ({ data }: Props) => {
   useEffect(() => {
     ReactGA.initialize('G-3JHG3XBMTX');
     ReactGA.pageview(window.location.pathname + window.location.search);
-
-    setTimeout(() => {
-      setMessage({
-        title: '👋 Junho Yeo invited you to view his GitHub profile',
-        onClickLater: () => setMessageShown(false),
-        onClickOkay: () => {
-          openURL('https://github.com/junhoyeo');
-          setMessageShown(false);
-        },
-      });
-      setMessageShown(true);
-    }, 500);
   }, []);
 
   const onClickSocial = ({ name, url, key }: Social) => {
