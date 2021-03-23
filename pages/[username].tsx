@@ -2,8 +2,7 @@ import axios from 'axios';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
-import React, { useEffect } from 'react';
-import ReactGA from 'react-ga';
+import React from 'react';
 import styled from 'styled-components';
 
 import { AppButton } from '@/components/AppButton';
@@ -22,11 +21,6 @@ type Params = ParsedUrlQuery & {
 
 const UserProfile = ({ data }: Props) => {
   const [isMobile] = useIsMobile();
-
-  useEffect(() => {
-    ReactGA.initialize('G-3JHG3XBMTX');
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
 
   const onClickAppButton = () => {
     window.location.href = 'https://ios.joinclubhouse.com/@junhoyeo';

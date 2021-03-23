@@ -1,9 +1,18 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 
 import { GlobalStyle } from '@/components/GlobalStyle';
 
 function App({ Component, pageProps }) {
+  useEffect(() => {
+    // 클라이언트 사이드에서만 실행
+    if (typeof window !== 'undefined') {
+      ReactGA.initialize('UA-192936991-1');
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }
+  }, []);
+
   return (
     <>
       <Head>
