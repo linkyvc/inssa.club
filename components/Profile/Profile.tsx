@@ -2,19 +2,14 @@ import moment from 'moment';
 import React from 'react';
 import styled from 'styled-components';
 
+import { ClubhouseColors } from '@/constants/Colors';
 import { Clubhouse } from '@/types/clubhouse';
 
 interface ProfileProps {
   profile: Clubhouse.Profile;
-  onClickInstagram: () => void;
-  onClickTwitter: () => void;
 }
 
-export const Profile: React.FC<ProfileProps> = ({
-  profile,
-  onClickInstagram,
-  onClickTwitter,
-}) => {
+export const Profile: React.FC<ProfileProps> = ({ profile }) => {
   const formattedJoinedDate = moment(new Date(profile.time_created)) //
     .format('MMM DD, yyyy');
 
@@ -36,16 +31,22 @@ export const Profile: React.FC<ProfileProps> = ({
       <Bio>{profile.bio}</Bio>
       <SocialRow>
         {profile.instagram && (
-          <Social onClick={onClickInstagram}>
+          <SocialLink
+            href={`https://instagram.com/${profile.instagram}`}
+            target="_blank"
+          >
             <InstagramLogo />
             <span>{profile.instagram}</span>
-          </Social>
+          </SocialLink>
         )}
         {profile.twitter && (
-          <Social onClick={onClickTwitter}>
+          <SocialLink
+            href={`https://twitter.com/${profile.twitter}`}
+            target="_blank"
+          >
             <TwitterLogo />
             <span>{profile.twitter}</span>
-          </Social>
+          </SocialLink>
         )}
       </SocialRow>
       <NorminationContainer>
@@ -113,10 +114,11 @@ const SocialRow = styled.div`
   align-items: center;
 `;
 
-const Social = styled.span`
+const SocialLink = styled.a`
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: ${ClubhouseColors.text_black};
 
   span {
     font-size: 0.95rem;

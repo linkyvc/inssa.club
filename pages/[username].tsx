@@ -11,7 +11,6 @@ import { Profile } from '@/components/Profile';
 import { ServiceWrapper } from '@/components/ServiceWrapper';
 import { ProfileDocument } from '@/types/clubhouse';
 import { copyToClipboard } from '@/utils/copyToClipboard';
-import { openURL } from '@/utils/openURL';
 import { useIsMobile } from '@/utils/useIsMobile';
 
 import profile from '../data/profile.json';
@@ -24,12 +23,6 @@ type Params = ParsedUrlQuery & {
   username: string;
 };
 
-interface Social {
-  name: string;
-  url: string;
-  key: 'instagram' | 'twitter';
-}
-
 const UserProfile = ({ data }: Props) => {
   const [isMobile] = useIsMobile();
   const [isMessageShown, setMessageShown] = useState<boolean>(false);
@@ -41,34 +34,6 @@ const UserProfile = ({ data }: Props) => {
     ReactGA.initialize('G-3JHG3XBMTX');
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
-
-  const onClickSocial = ({ name, url, key }: Social) => {
-    setMessageShown(false);
-    setTimeout(() => {
-      setMessage({
-        title: `👋 Thanks for clicking my ${name}!`,
-      });
-      setMessageShown(true);
-      setTimeout(() => {
-        openURL(`${url}/${profile[key]}`);
-        setMessageShown(false);
-      }, 2500);
-    }, 100);
-  };
-
-  const onClickInstagram = () =>
-    onClickSocial({
-      name: 'Instagram',
-      url: 'https://instagram.com',
-      key: 'instagram',
-    });
-
-  const onClickTwitter = () =>
-    onClickSocial({
-      name: 'Twitter',
-      url: 'https://twitter.com',
-      key: 'twitter',
-    });
 
   const onClickAppButton = () => {
     setMessageShown(false);
@@ -99,11 +64,7 @@ const UserProfile = ({ data }: Props) => {
   return (
     <ServiceWrapper>
       <Wrapper>
-        <Profile
-          profile={data.profile}
-          onClickInstagram={onClickInstagram}
-          onClickTwitter={onClickTwitter}
-        />
+        <Profile profile={data.profile} />
         <OpenAppButton
           isMobile={isMobile}
           title="Open app to follow me"
