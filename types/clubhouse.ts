@@ -1,4 +1,5 @@
 export namespace Clubhouse {
+  // Topic is unused for now
   export interface Topic {
     id: number;
     title: string;
@@ -24,33 +25,35 @@ export namespace Clubhouse {
   }
 
   export interface Profile {
-    user_id: number;
-    name: string;
-    displayname: string | null;
-    photo_url: string | null;
-    username: string;
     bio: string;
-    twitter: string | null;
-    instagram: string | null;
+    can_receive_direct_payment: false;
+    clubs: Club[];
+    direct_payment_fee_fixed: number;
+    direct_payment_fee_rate: number;
+    displayname: null;
+    instagram: string;
+    invited_by_user_profile: {
+      name: string;
+      photo_url: string;
+      user_id: number;
+      username: string;
+    };
+    name: string;
     num_followers: number;
     num_following: number;
+    photo_url: string;
     time_created: string;
-    follows_me?: boolean;
-    is_blocked_by_network?: boolean;
-    mutual_follows_count?: number;
-    mutual_follows?: any[];
-    notification_type?: any;
-    invited_by_user_profile: {
-      user_id: number;
-      name: string;
-      photo_url: string | null;
-      username: string | null;
-    } | null;
-    clubs: Club[];
-    has_verified_email?: boolean;
-    can_edit_username?: boolean;
-    can_edit_name?: boolean;
-    can_edit_displayname?: boolean;
-    topics: Topic[];
+    twitter: null;
+    url: string;
+    username: string;
   }
 }
+
+export type ProfileDocument = {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  user_id: number;
+  username: string;
+  profile: Clubhouse.Profile;
+};
