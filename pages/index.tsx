@@ -116,6 +116,11 @@ const Home = () => {
       return;
     }
 
+    await Analytics.logEvent('click_create_profile', {
+      clubhouse_user_id,
+      clubhouse_username,
+    });
+
     // 이메일을 입력하지 않았을 경우
     router.push(`/${username}`);
   };

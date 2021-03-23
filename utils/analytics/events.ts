@@ -7,7 +7,7 @@ export type AnalyticsEvent = {
   click_create_profile: {
     clubhouse_user_id: number;
     clubhouse_username: string;
-    email: string;
+    email?: string;
   };
   click_profile_norminated: {
     clubhouse_user_id: number;
