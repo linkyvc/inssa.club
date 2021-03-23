@@ -9,6 +9,7 @@
     "update": "node ./scripts/update.js"
   },
   "dependencies": {
+    "amplitude-js": "^8.1.0",
     "axios": "^0.21.1",
     "date-fns": "^2.19.0",
     "dotenv": "^8.2.0",

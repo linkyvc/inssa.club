@@ -2,6 +2,24 @@
 # yarn lockfile v1
 
 
+"@amplitude/types@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.npmjs.org/@amplitude/types/-/types-1.5.2.tgz#22b698c170214fc7bf2622cb71fc183ffc7a7a14"
+  integrity sha512-uxDQApn0yUNfE7JnH1bSfXZoMt6Q9bcqmW6EPXUq94LnYJd1a21IH/jFU3lS80LWb4CrwAKqatA2tFUVpoa2Mw==
+
+"@amplitude/ua-parser-js@0.7.24":
+  version "0.7.24"
+  resolved "https://registry.npmjs.org/@amplitude/ua-parser-js/-/ua-parser-js-0.7.24.tgz#2ce605af7d2c38d4a01313fb2385df55fbbd69aa"
+  integrity sha512-VbQuJymJ20WEw0HtI2np7EdC3NJGUWi8+Xdbc7uk8WfMIF308T0howpzkQ3JFMN7ejnrcSM/OyNGveeE3TP3TA==
+
+"@amplitude/utils@^1.0.5":
+  version "1.5.2"
+  resolved "https://registry.npmjs.org/@amplitude/utils/-/utils-1.5.2.tgz#6c95ca4e27d921dd0bb4e68853cb70af7b8ad1ec"
+  integrity sha512-TGcmTfmMT/+Mc3ONYR0rzYI3wMH37WoTIqsGDa4wBg6OJdOly3HN/jaMhRNn1Fb50LnKs4ufpo+4XYdCgPxEkg==
+  dependencies:
+    "@amplitude/types" "^1.5.2"
+    tslib "^1.9.3"
+
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -349,6 +367,16 @@ ajv@^6.1.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+amplitude-js@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.npmjs.org/amplitude-js/-/amplitude-js-8.1.0.tgz#1d5b95f5fbe660cbf78e403d1d18d78c18a9e5ec"
+  integrity sha512-S52cbLElI2qO3qqREYHsg1UBbEsq7bM6mpc62dF/m8eT3XgiOKs11nVBnVYk5JwmSgjIxw2pMgVdLYZ7833GSw==
+  dependencies:
+    "@amplitude/ua-parser-js" "0.7.24"
+    "@amplitude/utils" "^1.0.5"
+    blueimp-md5 "^2.10.0"
+    query-string "5"
+
 anser@1.4.9:
   version "1.4.9"
   resolved "https://registry.npmjs.org/anser/-/anser-1.4.9.tgz#1f85423a5dcf8da4631a341665ff675b96845760"
@@ -593,6 +621,11 @@ bl@^1.0.0:
   dependencies:
     readable-stream "^2.3.5"
     safe-buffer "^5.1.1"
+
+blueimp-md5@^2.10.0:
+  version "2.18.0"
+  resolved "https://registry.npmjs.org/blueimp-md5/-/blueimp-md5-2.18.0.tgz#1152be1335f0c6b3911ed9e36db54f3e6ac52935"
+  integrity sha512-vE52okJvzsVWhcgUHOv+69OG3Mdg151xyn41aVQN/5W5S+S43qZhxECtYLAEHMSFWX6Mv5IZrzj3T5+JqXfj5Q==
 
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.4.0:
   version "4.11.9"
@@ -3276,7 +3309,7 @@ punycode@^2.1.0:
   resolved "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-query-string@^5.0.1:
+query-string@5, query-string@^5.0.1:
   version "5.1.1"
   resolved "https://registry.npmjs.org/query-string/-/query-string-5.1.1.tgz#a78c012b71c17e05f2e3fa2319dd330682efb3cb"
   integrity sha512-gjWOsm2SoGlgLEdAGt7a6slVOk9mGiXmPFMqrEhLQ68rhQuBnpfs3+EmlvqKyxnCo9/PPlF+9MtY02S1aFg+Jw==
@@ -4091,6 +4124,11 @@ ts-pnp@^1.1.6:
   version "1.2.0"
   resolved "https://registry.npmjs.org/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
+
+tslib@^1.9.3:
+  version "1.14.1"
+  resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
+  integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
 tty-browserify@0.0.0:
   version "0.0.0"
