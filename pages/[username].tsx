@@ -10,6 +10,7 @@ import { Profile } from '@/components/Profile';
 import { ServiceWrapper } from '@/components/ServiceWrapper';
 import { ProfileDocument } from '@/types/clubhouse';
 import { Analytics } from '@/utils/analytics';
+import { isBrowser } from '@/utils/browser';
 import { useIsMobile } from '@/utils/useIsMobile';
 
 type Props = {
@@ -24,7 +25,7 @@ const UserProfile = ({ data }: Props) => {
   const [isMobile] = useIsMobile();
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (isBrowser) {
       Analytics.logEvent('view_profile', {
         clubhouse_user_id: data.user_id,
         clubhouse_username: data.username,

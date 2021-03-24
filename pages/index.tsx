@@ -13,6 +13,7 @@ import { Message, MessageProps } from '@/components/Message';
 import { Strings } from '@/constants/Strings';
 import { ProfileDocument } from '@/types/clubhouse';
 import { Analytics } from '@/utils/analytics';
+import { isBrowser } from '@/utils/browser';
 
 const Home = () => {
   const router = useRouter();
@@ -27,7 +28,7 @@ const Home = () => {
   });
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (isBrowser) {
       Analytics.logEvent('view_landing');
     }
   }, []);

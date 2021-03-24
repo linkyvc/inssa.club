@@ -4,13 +4,14 @@ import ReactGA from 'react-ga';
 
 import { GlobalStyle } from '@/components/GlobalStyle';
 import { Analytics } from '@/utils/analytics';
+import { isBrowser } from '@/utils/browser';
 
 Analytics.initialize();
 
 function App({ Component, pageProps }) {
   useEffect(() => {
     // 클라이언트 사이드에서만 실행
-    if (typeof window !== 'undefined') {
+    if (isBrowser) {
       ReactGA.initialize('UA-192936991-1');
       ReactGA.pageview(window.location.pathname + window.location.search);
     }
