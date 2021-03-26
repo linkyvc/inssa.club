@@ -37,7 +37,7 @@ export namespace Clubhouse {
       photo_url: string;
       user_id: number;
       username: string;
-    };
+    } | null;
     name: string;
     num_followers: number;
     num_following: number;

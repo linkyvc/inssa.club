@@ -69,32 +69,36 @@ export const Profile: React.FC<ProfileProps> = ({
           </SocialLink>
         )}
       </SocialRow>
-      <NorminationLink
-        href={`/${profile.invited_by_user_profile.username}`}
-        onClick={async (event) => {
-          event.preventDefault();
-          await Analytics.logEvent('click_profile_norminated', {
-            clubhouse_user_id: user_id,
-            clubhouse_username: profile.username,
-            norminated_clubhouse_user_id:
-              profile.invited_by_user_profile.user_id,
-            norminated_clubhouse_username:
-              profile.invited_by_user_profile.username,
-          });
-          router.push(`/${profile.invited_by_user_profile.username}`);
-        }}
-      >
-        <NorminationContainer>
-          <NorminationProfile src={profile.invited_by_user_profile.photo_url} />
-          <NorminationInformation>
-            <JoinedAt>{`Joined ${formattedJoinedDate}`}</JoinedAt>
-            <NorminationText>
-              Norminated by{' '}
-              <Norminator>{profile.invited_by_user_profile.name}</Norminator>
-            </NorminationText>
-          </NorminationInformation>
-        </NorminationContainer>
-      </NorminationLink>
+      {!!profile.invited_by_user_profile && (
+        <NorminationLink
+          href={`/${profile.invited_by_user_profile.username}`}
+          onClick={async (event) => {
+            event.preventDefault();
+            await Analytics.logEvent('click_profile_norminated', {
+              clubhouse_user_id: user_id,
+              clubhouse_username: profile.username,
+              norminated_clubhouse_user_id:
+                profile.invited_by_user_profile.user_id,
+              norminated_clubhouse_username:
+                profile.invited_by_user_profile.username,
+            });
+            router.push(`/${profile.invited_by_user_profile.username}`);
+          }}
+        >
+          <NorminationContainer>
+            <NorminationProfile
+              src={profile.invited_by_user_profile.photo_url}
+            />
+            <NorminationInformation>
+              <JoinedAt>{`Joined ${formattedJoinedDate}`}</JoinedAt>
+              <NorminationText>
+                Norminated by{' '}
+                <Norminator>{profile.invited_by_user_profile.name}</Norminator>
+              </NorminationText>
+            </NorminationInformation>
+          </NorminationContainer>
+        </NorminationLink>
+      )}
     </>
   );
 };
