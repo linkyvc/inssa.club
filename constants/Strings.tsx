@@ -113,4 +113,12 @@ export const Strings = {
       ),
     },
   }),
+  promotion: new LocalizedStrings({
+    en: {
+      profileLikeThis: '✨Profile like this 🙌',
+    },
+    ko: {
+      profileLikeThis: '✨이런 프로필을 만들 수 있어요 🙌',
+    },
+  }),
 };

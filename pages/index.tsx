@@ -8,6 +8,7 @@ import { Button } from '@/components/Button';
 import { Checkbox } from '@/components/Checkbox';
 import { Footer } from '@/components/home/main/Footer';
 import { MainSection } from '@/components/home/main/MainSection';
+import { PromotionSection } from '@/components/home/promotion/PromotionSection';
 import { Input } from '@/components/Input';
 import { Message, MessageProps } from '@/components/Message';
 import { Strings } from '@/constants/Strings';
@@ -173,6 +174,7 @@ const Home = () => {
           </MainForm>
           <Footer />
         </MainSection>
+        <PromotionSection />
         <Message isMessageShown={isMessageShown} {...message} />
       </Container>
     </>
