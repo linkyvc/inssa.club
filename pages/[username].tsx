@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import { AppButton } from '@/components/AppButton';
 import { Profile } from '@/components/Profile';
 import { ServiceWrapper } from '@/components/ServiceWrapper';
+import { Strings } from '@/constants/Strings';
 import { ProfileDocument } from '@/types/clubhouse';
 import { Analytics } from '@/utils/analytics';
 import { isBrowser } from '@/utils/browser';
@@ -72,7 +73,7 @@ const UserProfile = ({ data }: Props) => {
           <Profile data={data} />
           <OpenAppButton
             isMobile={isMobile}
-            title="Open app to follow me"
+            title={Strings.profile.openAppToFollowMe}
             onClick={onClickAppButton}
           />
         </Wrapper>

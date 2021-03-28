@@ -121,4 +121,12 @@ export const Strings = {
       profileLikeThis: '✨이런 프로필을 만들 수 있어요 🙌',
     },
   }),
+  profile: new LocalizedStrings({
+    en: {
+      openAppToFollowMe: 'Open app to follow me',
+    },
+    ko: {
+      openAppToFollowMe: '클럽하우스로 팔로우하기',
+    },
+  }),
 };

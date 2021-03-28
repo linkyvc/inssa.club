@@ -58,9 +58,9 @@ const Content = styled.div`
 const Title = styled.h1`
   margin: 0;
   margin-bottom: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', 'TmoneyRoundWindExtraBold', sans-serif;
   font-weight: 900;
-  font-size: 56px;
+  font-size: 48px;
   line-height: 120%;
 
   & > span {
