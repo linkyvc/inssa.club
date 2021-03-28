@@ -40,7 +40,6 @@ const Container = styled.div`
 const Title = styled.h1`
   margin: 0;
   margin-bottom: 24px;
-  font-family: 'Nunito', 'TmoneyRoundWindRegular', sans-serif;
   font-weight: 900;
   font-size: 48px;
   line-height: 120%;

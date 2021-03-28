@@ -5,7 +5,7 @@ import { ClubhouseColors } from '@/constants/Colors';
 
 const fonts = css`
   @font-face {
-    font-family: 'TmoneyRoundWindRegular';
+    font-family: 'TmoneyRoundWind';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff')
       format('woff');
     font-weight: normal;
@@ -13,10 +13,10 @@ const fonts = css`
   }
 
   @font-face {
-    font-family: 'TmoneyRoundWindExtraBold';
+    font-family: 'TmoneyRoundWind';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff')
       format('woff');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
   }
 `;
@@ -46,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     color: ${ClubhouseColors.text_black};
-    font-family: 'Nunito', 'TmoneyRoundWindRegular', sans-serif;
+    font-family: 'Nunito', 'TmoneyRoundWind', sans-serif;
   }
 
   a {
