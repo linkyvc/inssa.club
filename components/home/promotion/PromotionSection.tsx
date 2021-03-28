@@ -73,12 +73,16 @@ const Screen = styled.img`
     0 22.3px 17.9px rgba(163, 151, 106, 0.089),
     0 41.8px 33.4px rgba(163, 151, 106, 0.108),
     0 100px 80px rgba(163, 151, 106, 0.15);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
+  margin-right: 8px;
 
   &:nth-child(2) {
     z-index: 9;
-    transform: scale(1.06);
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 
   &:hover {
@@ -88,8 +92,7 @@ const Screen = styled.img`
       0 12.3px 17.9px rgba(163, 151, 106, 0.089),
       0 23px 33.4px rgba(163, 151, 106, 0.108),
       0 55px 80px rgba(163, 151, 106, 0.15);
-    transform: scale(1.08);
     z-index: 12;
-    transform: scale(1.2);
+    transform: scale(1.01);
   }
 `;
