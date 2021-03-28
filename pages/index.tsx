@@ -187,7 +187,6 @@ const Container = styled.div`
   margin: 64px auto 0;
   width: 100%;
   max-width: 1000px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 `;

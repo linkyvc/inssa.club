@@ -21,9 +21,7 @@ export const MainSection: React.FC = ({ children }) => {
   );
 };
 
-const Wrapper = styled.div`
-  min-height: 100vh;
-`;
+const Wrapper = styled.div``;
 
 const Container = styled.main`
   width: 100%;
@@ -42,11 +40,6 @@ const Container = styled.main`
 `;
 
 const Content = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
   max-width: 500px;
 
   @media (max-width: 850px) {

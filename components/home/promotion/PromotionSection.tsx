@@ -25,23 +25,24 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 52px;
   margin-bottom: 128px;
 
-  @media (max-width: 1100px) {
+  /* @media (max-width: 1100px) {
     margin: 0 auto;
     width: calc(100% - 60px);
   }
 
   @media (max-width: 850px) {
     margin: 0 auto;
-  }
+  } */
 `;
 
 const Title = styled.h1`
   margin: 0;
   margin-bottom: 24px;
   font-weight: 900;
-  font-size: 48px;
+  font-size: 36px;
   line-height: 120%;
   text-align: center;
 
@@ -63,7 +64,6 @@ const ScreenList = styled.div`
 
 const Screen = styled.img`
   width: 30%;
-  height: auto;
   border-radius: 24px;
   border: 1px solid ${ClubhouseColors.border_ivory};
   background-color: ${ClubhouseColors.placeholder_ivory};
