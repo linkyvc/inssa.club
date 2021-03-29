@@ -14,7 +14,11 @@ export const PromotionSection = () => {
       <Title>{Strings.promotion.profileLikeThis}</Title>
       <ScreenList>
         {promotions.map(({ username, screenImage }) => (
-          <Screen src={screenImage} onClick={() => onClickScreen(username)} />
+          <Screen
+            key={username}
+            src={screenImage}
+            onClick={() => onClickScreen(username)}
+          />
         ))}
       </ScreenList>
     </Container>
