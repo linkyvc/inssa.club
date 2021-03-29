@@ -6,16 +6,14 @@ import { ClubhouseColors } from '@/constants/Colors';
 const fonts = css`
   @font-face {
     font-family: 'TmoneyRoundWind';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff')
-      format('woff');
+    src: url('fonts/TmoneyRoundWindRegular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'TmoneyRoundWind';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff')
-      format('woff');
+    src: url('fonts/TmoneyRoundWindExtraBold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
   }
