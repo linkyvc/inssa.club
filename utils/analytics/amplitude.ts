@@ -14,6 +14,9 @@ export async function getAmplitude() {
 export async function initialize() {
   const amplitude = await getAmplitude();
   amplitude?.init(AMPLITUDE_API_KEY);
+  amplitude?.setUserProperties({
+    is_debug: process.env.NODE_ENV !== 'production',
+  });
 }
 
 export async function logEvent<TName extends keyof AnalyticsEvent>(
