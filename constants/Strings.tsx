@@ -57,7 +57,7 @@ export const Strings = {
           We are quietly making a new profile service, called Linky.
           <br />
           <strong>
-            Check if you want to have an invite first when Link is ready!
+            Check if you want to have an invite first when Linky is ready!
           </strong>
         </>
       ),
