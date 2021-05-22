@@ -26,6 +26,8 @@ const Wrapper = styled.div`
 
 const Container = styled.nav`
   margin: 0 auto;
+  padding: 0 20px;
+  padding-right: 14px;
   width: 100%;
   max-width: 1200px;
   display: flex;
