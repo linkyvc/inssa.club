@@ -1,18 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const LinkToLinky = 'https://linky.vc';
+
 export const Navigator = () => {
   return (
     <Wrapper>
       <Container>
-        <Linky>Linky™</Linky>
-        <ActionContainer>
-          <ActionText>
-            Personal profile on the Web, and{' '}
-            <strong>Damn this thing rocks!</strong>
-          </ActionText>
-          <TriangleRightIcon />
-        </ActionContainer>
+        <a href={LinkToLinky} target="_blank">
+          <Linky>Linky™</Linky>
+        </a>
+        <a href={LinkToLinky} target="_blank">
+          <ActionContainer>
+            <ActionText>
+              Personal profile on the Web, and{' '}
+              <strong>Damn this thing rocks!</strong>
+            </ActionText>
+            <TriangleRightIcon />
+          </ActionContainer>
+        </a>
       </Container>
     </Wrapper>
   );
