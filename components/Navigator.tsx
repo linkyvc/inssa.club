@@ -6,10 +6,13 @@ export const Navigator = () => {
     <Wrapper>
       <Container>
         <Linky>Linky™</Linky>
-        <Action>
-          Personal profile on the Web, and{' '}
-          <strong>Damn this thing rocks!</strong>
-        </Action>
+        <ActionContainer>
+          <ActionText>
+            Personal profile on the Web, and{' '}
+            <strong>Damn this thing rocks!</strong>
+          </ActionText>
+          <TriangleRightIcon />
+        </ActionContainer>
       </Container>
     </Wrapper>
   );
@@ -35,7 +38,15 @@ const Linky = styled.span`
   font-weight: 900;
 `;
 
-const Action = styled.span`
+const ActionContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const ActionText = styled.span`
   font-size: 1.05rem;
+  margin-top: 2px;
   font-weight: 300;
 `;
+const TriangleRightIcon = styled.img.attrs({
+  src: 'images/triangle-right.svg',
+})``;
