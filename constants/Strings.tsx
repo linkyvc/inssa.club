@@ -16,11 +16,11 @@ export const Strings = {
     en: {
       title: () => (
         <>
-          Share your
+          Clubhouse®
           <br />
-          <span>Clubhouse Profile</span>
+          Profile Links
           <br />
-          with a single link 🚀
+          For Everyone
         </>
       ),
       promotion: () => (

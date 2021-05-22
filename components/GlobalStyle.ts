@@ -44,12 +44,16 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     color: ${ClubhouseColors.text_black};
-    font-family: 'Nunito', 'TmoneyRoundWind', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
   a {
     text-decoration: none;
     cursor: pointer;
+  }
+
+  strong {
+    font-weight: 700;
   }
 
   img {
