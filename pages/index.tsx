@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { MainSection } from '@/components/home/main/MainSection';
+import { PromotionSection } from '@/components/home/promotion/PromotionSection';
 import { Message, MessageProps } from '@/components/Message';
 import { Navigator } from '@/components/Navigator';
 import { Strings } from '@/constants/Strings';
@@ -33,6 +34,7 @@ const Home = () => {
       <Navigator />
       <Container>
         <MainSection />
+        <PromotionSection />
         <Message isMessageShown={isMessageShown} {...message} />
       </Container>
     </>
