@@ -1,4 +1,5 @@
 import LocalizedStrings from 'react-localization';
+import styled from 'styled-components';
 
 export const Strings = {
   project: new LocalizedStrings({
@@ -26,9 +27,7 @@ export const Strings = {
       promotion: () => (
         <>
           Did you know that people are{' '}
-          <span style={{ display: 'inline-block' }}>
-            more likely to follow you
-          </span>
+          <InlineBlock>more likely to follow you</InlineBlock>
           <br />
           <strong>when they see your profile</strong> in their eyes
           <br />
@@ -78,9 +77,7 @@ export const Strings = {
           <br />
           <strong>
             프로필 링크를 츤츤하게 건네면{' '}
-            <span style={{ display: 'inline-block' }}>
-              팔로우당할 확률이 높다는 것,
-            </span>
+            <InlineBlock>팔로우당할 확률이 높다는 것,</InlineBlock>
           </strong>
           <br />
           알고 계셨나요!
@@ -117,9 +114,9 @@ export const Strings = {
     en: {
       profileLikeThis: () => (
         <>
-          Your Profile on the Web,
+          Your Profile <InlineBlock>on the Web,</InlineBlock>
           <br />
-          Just like the Real App.
+          Just like <InlineBlock>the Real App.</InlineBlock>
         </>
       ),
     },
@@ -136,3 +133,7 @@ export const Strings = {
     },
   }),
 };
+
+const InlineBlock = styled.span`
+  display: inline-block;
+`;
